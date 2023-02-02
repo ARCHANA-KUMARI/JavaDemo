@@ -39,6 +39,9 @@ public class Phone {
 
     private int mRamSize, mExternalStorageSize, mExtendableMemorySize;
 
+    public Phone() {
+    }
+
     public Phone(String mOS, String mPrecessor, int mRamSize, int mExternalStorageSize) {
         super();
         this.mOS = mOS;
@@ -52,4 +55,49 @@ public class Phone {
     public String toString() {
         return "Phone" + "Model is" + mModelName + "Os is" + mOS + "Processor is" + mPrecessor + "Ram size is" + mRamSize + "Cpu Arc" + mCPUArc + "External Storage size:" + mExternalStorageSize + "Extendable Memory size" + mExtendableMemorySize;
     }
+    public static class PhoneBuilder {
+        private String mModelName, mOS, mPrecessor, mCPUArc;
+        private int mRamSize, mExternalStorageSize, mExtendableMemorySize;
+
+        public PhoneBuilder setmModelName(String mModelName) {
+            this.mModelName = mModelName;
+            return this;
+        }
+
+        public PhoneBuilder setmOS(String mOS) {
+            this.mOS = mOS;
+            return this;
+        }
+
+        public PhoneBuilder setmPrecessor(String mPrecessor) {
+            this.mPrecessor = mPrecessor;
+            return this;
+        }
+
+        public PhoneBuilder setmCPUArc(String mCPUArc) {
+            this.mCPUArc = mCPUArc;
+            return this;
+        }
+
+        public PhoneBuilder setmRamSize(int mRamSize) {
+            this.mRamSize = mRamSize;
+            return this;
+        }
+
+        public PhoneBuilder setmExternalStorageSize(int mExternalStorageSize) {
+            this.mExternalStorageSize = mExternalStorageSize;
+            return this;
+        }
+
+        public PhoneBuilder setmExtendableMemorySize(int mExtendableMemorySize) {
+            this.mExtendableMemorySize = mExtendableMemorySize;
+            return this;
+        }
+
+        public  Phone getPhone() {
+            return new Phone(mOS, mPrecessor, mRamSize, mExternalStorageSize);
+        }
+    }
 }
+
+
