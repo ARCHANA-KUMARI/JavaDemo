@@ -1,4 +1,4 @@
-package designpattern;
+package designpattern.builder;
 
 import androidx.annotation.NonNull;
 
@@ -59,8 +59,8 @@ public class Phone {
         private String mModelName, mOS, mPrecessor, mCPUArc;
         private int mRamSize, mExternalStorageSize, mExtendableMemorySize;
 
-        public PhoneBuilder setmModelName(String mModelName) {
-            this.mModelName = mModelName;
+        public PhoneBuilder setmModelName(String modelName) {
+            this.mModelName = modelName;
             return this;
         }
 

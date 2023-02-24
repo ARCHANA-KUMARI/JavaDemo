@@ -1,4 +1,4 @@
-package designpattern;
+package designpattern.builder;
 
 /**
  * @Author: Archana Kumari
@@ -11,7 +11,8 @@ public class DesignPatternDriver {
         System.out.println("Phone Config is:" + phone);*/
 
         // If Builder class is nested class of Phone
-        Phone  phone = new Phone.PhoneBuilder().setmModelName("Redmi").setmCPUArc("x86").setmOS("13").setmRamSize(8).getPhone();
+        Phone phone = new Phone.PhoneBuilder().setmModelName("Redmi").setmCPUArc("x86").setmOS("13").setmRamSize(8).getPhone();
         System.out.println("Phone Config is:" + phone);
     }
 }
+

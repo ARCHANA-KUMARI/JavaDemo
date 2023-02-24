@@ -1,4 +1,4 @@
-package designpattern;
+package designpattern.builder;
 
 /**
  * Builder class for Phone
@@ -45,7 +45,7 @@ public class PhoneBuilder {
         return this;
     }
 
-    public  Phone getPhone() {
+    public Phone getPhone() {
         return new Phone(mOS, mPrecessor, mRamSize, mExternalStorageSize);
     }
 }
