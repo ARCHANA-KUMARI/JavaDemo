@@ -10,13 +10,20 @@ import enumdemo.SettingDialogId;
  */
 public class DefaultMethodDriver {
     public static void main(String[] args) {
-        // Setting dialog impl
+      /*  // Setting dialog impl
         SettingDialogImpl settingDialogImpl = new SettingDialogImpl();
         settingDialogImpl.showChangeStorageSettingDialog();
         settingDialogImpl.getSettingDialogListener().onCreateDialog(SettingDialogId.CHANGE_STORAGE_SETTINGS);
 
         LocationSettingDialogImpl locationSettingDialog = new LocationSettingDialogImpl();
         locationSettingDialog.showLocationDialog();
-        locationSettingDialog.getmCameraSettingDialogListener().onCancelDialog(SettingDialogId.DEFAULT);
+        locationSettingDialog.getmCameraSettingDialogListener().onCancelDialog(SettingDialogId.DEFAULT);*/
+
+        Vehicle vehicle = new Car();
+        System.out.println(vehicle.getBrand());
+        System.out.println(vehicle.speedUp());
+        System.out.println(vehicle.slowDown());
+        System.out.println(vehicle.turnAlarmOn());
+        System.out.println(vehicle.turnAlarmOff());
     }
 }
