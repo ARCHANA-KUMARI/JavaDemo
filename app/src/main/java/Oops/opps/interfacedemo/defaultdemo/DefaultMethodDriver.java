@@ -25,5 +25,6 @@ public class DefaultMethodDriver {
         System.out.println(vehicle.slowDown());
         System.out.println(vehicle.turnAlarmOn());
         System.out.println(vehicle.turnAlarmOff());
+        System.out.println(Vehicle.getHorsePower(2500,480));
     }
 }

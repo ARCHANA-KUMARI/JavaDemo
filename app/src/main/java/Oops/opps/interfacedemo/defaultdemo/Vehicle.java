@@ -18,4 +18,7 @@ public interface Vehicle {
     default String turnAlarmOff() {
         return "Turning the vehicle alarm off.";
     }
+    static int getHorsePower(int rpm, int torque) {
+        return (rpm * torque) / 5252;
+    }
 }
