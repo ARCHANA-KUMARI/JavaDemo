@@ -11,8 +11,10 @@ public class EvenOddGenerator {
         synchronized (this) {
             while (mCount < nTerms) {
                 if (mCount % 2 == 0) {
+                    System.out.println("Inside if block : printOdd mCount" + mCount);
                     wait();
                 }
+                System.out.println("After if block : printOdd");
                 System.out.println(mCount);
                 mCount++;
                 notify();
@@ -24,8 +26,10 @@ public class EvenOddGenerator {
         synchronized (this) {
             while (mCount < nTerms) {
                 if (mCount % 2 == 1) {
+                    System.out.println("Inside if block : printEven mCount" + mCount);
                     wait();
                 }
+                System.out.println("After if block : printEven");
                 System.out.println(mCount);
                 mCount++;
                 notify();

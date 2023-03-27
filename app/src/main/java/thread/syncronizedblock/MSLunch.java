@@ -15,7 +15,7 @@ public class MSLunch {
 
     public void inc1() {
         System.out.println("Inc1 method started");
-        synchronized (/*this*//*lock1*/MSLunch.class) {
+        synchronized (/*this*/lock1/*MSLunch.class*/) {
             System.out.println("Inc1 block started" + MSLunch.class);
             System.out.println("Inc1" + this);
             System.out.println("Before Incr1 " + c1);
@@ -39,7 +39,7 @@ public class MSLunch {
 
     public void inc2() {
         System.out.println("Inc2 method started");
-        synchronized (/*this*//*lock2*/MSLunch.class) {
+        synchronized (/*this*/lock2/*MSLunch.class*/) {
             System.out.println("Inc2 block started" + MSLunch.class);
             System.out.println("Inc2" + this);
             System.out.println("Before Incr2 " + c2);
