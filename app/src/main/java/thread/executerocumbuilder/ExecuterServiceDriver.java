@@ -62,14 +62,18 @@ public class ExecuterServiceDriver {
         callableList.add(ExecuterDemoCallable("Task2"));
         callableList.add(ExecuterDemoCallable("Task3"));
         try {
-            String result = executorService.invokeAny(callableList);
-            System.out.println("Returned value after computation using callable: " + result);
+           // String result = executorService.invokeAny(callableList);
+            //System.out.println("Returned value after computation using callable: " + result);
+            List<Future<String>> futureList = executorService.invokeAll(callableList);
+            for (Future<String> taskName: futureList) {
+                System.out.println("Returned value after computation using callable: " + taskName.get());
+            }
+           
         } catch (ExecutionException e) {
             throw new RuntimeException(e);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public static Callable<String> ExecuterDemoCallable(String taskName) {
