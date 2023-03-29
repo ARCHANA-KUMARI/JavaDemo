@@ -1,5 +1,7 @@
 package thread.executerocumbuilder;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -41,6 +43,7 @@ public class ExecuterServiceDriver {
         System.out.println("Is is done after:" + future.isDone());
         System.out.println("Cancel checked: when task is completed:" + future.cancel(true)); // false*/
 
+/*
         // Get result and block main thread with Callable
         Future future = executorService.submit(ExecuterDemoCallable("Task1 using callable"));
         try {
@@ -50,7 +53,22 @@ public class ExecuterServiceDriver {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+*/
 
+        // Multiple callabale with anyone task execution
+
+        List<Callable<String>> callableList = new ArrayList<>();
+        callableList.add(ExecuterDemoCallable("Task1"));
+        callableList.add(ExecuterDemoCallable("Task2"));
+        callableList.add(ExecuterDemoCallable("Task3"));
+        try {
+            String result = executorService.invokeAny(callableList);
+            System.out.println("Returned value after computation using callable: " + result);
+        } catch (ExecutionException e) {
+            throw new RuntimeException(e);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
