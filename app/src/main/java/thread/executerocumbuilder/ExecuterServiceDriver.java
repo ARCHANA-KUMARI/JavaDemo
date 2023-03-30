@@ -1,5 +1,7 @@
 package thread.executerocumbuilder;
 
+import android.os.StrictMode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -15,11 +17,19 @@ import java.util.concurrent.Future;
 public class ExecuterServiceDriver {
     public static void main(String args[]) {
        // ExecutorService executorService = Executors.newFixedThreadPool(10); // more than one thread so parallel exeecution of task
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-        //ExecutorService executorService = Executors.newFixedThreadPool(1); // sequential  execution of task because only one thread in Thread pool
-        /*executorService.execute(ExecuterDemoRunnable("Task1"));
+       // ExecutorService executorService = Executors.newSingleThreadExecutor();
+        ExecutorService executorService = Executors.newFixedThreadPool(1); // sequential  execution of task because only one thread in Thread pool
+        executorService.execute(ExecuterDemoRunnable("Task1"));
         executorService.execute(ExecuterDemoRunnable("Task2"));
-        executorService.execute(ExecuterDemoRunnable("Task3"));*/
+        executorService.execute(ExecuterDemoRunnable("Task3"));
+
+        //Shut down demo
+        List<Runnable> runnableList = executorService.shutdownNow(); // returns unexecuted task list
+        System.out.println("runnableList.size:" + runnableList.size());
+        for (Runnable runnable : runnableList) {
+            System.out.println("Runnable: after shutdown" + runnable);
+        }
+
         //or
      /*   executorService.execute(ExecuterDemoRunnable("Task3"));
         executorService.execute(ExecuterDemoRunnable("Task1"));
@@ -39,7 +49,7 @@ public class ExecuterServiceDriver {
         } catch (Exception e){
             e.printStackTrace();
         }
-
+         executorService.shutdown()
         System.out.println("Is is done after:" + future.isDone());
         System.out.println("Cancel checked: when task is completed:" + future.cancel(true)); // false*/
 
@@ -53,9 +63,10 @@ public class ExecuterServiceDriver {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+         executorService.shutdown()
 */
 
-        // Multiple callabale with anyone task execution
+       /* // Multiple callabale with anyone task execution
 
         List<Callable<String>> callableList = new ArrayList<>();
         callableList.add(ExecuterDemoCallable("Task1"));
@@ -65,15 +76,18 @@ public class ExecuterServiceDriver {
            // String result = executorService.invokeAny(callableList);
             //System.out.println("Returned value after computation using callable: " + result);
             List<Future<String>> futureList = executorService.invokeAll(callableList);
+            //List<Runnable> runnableList =  executorService.shutdownNow();
             for (Future<String> taskName: futureList) {
                 System.out.println("Returned value after computation using callable: " + taskName.get());
             }
-           
         } catch (ExecutionException e) {
             throw new RuntimeException(e);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+       executorService.shutdown();
+*/
+
     }
 
     public static Callable<String> ExecuterDemoCallable(String taskName) {
@@ -90,6 +104,7 @@ public class ExecuterServiceDriver {
         return new Runnable() {
             @Override
             public void run() {
+                System.out.println("Runnable current instance to check shutdownNow:" + this);
                 System.out.println("Current Thread with task name:" + Thread.currentThread().getName() + ":" + taskName);
                 //wait(10000);
             }
