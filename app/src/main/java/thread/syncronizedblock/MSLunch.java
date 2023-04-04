@@ -1,7 +1,5 @@
 package thread.syncronizedblock;
 
-import android.util.Log;
-
 /**
  * @Author: Archana Kumari
  * @Date: 15-02-2023

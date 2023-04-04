@@ -20,6 +20,7 @@ public class BlockingQueueDemo {
         BlockingQueue blockingQueue = new LinkedBlockingQueue();
         new Thread(new Producer(blockingQueue, limit)).start();
         new Thread(new Consumer(blockingQueue)).start();
-        //new Thread(new Consumer(blockingQueue)).start();
+        new Thread(new Consumer(blockingQueue)).start();
+        new Thread(new Consumer(blockingQueue)).start();
     }
 }

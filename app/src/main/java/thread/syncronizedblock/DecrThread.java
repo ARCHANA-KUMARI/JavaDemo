@@ -1,7 +1,5 @@
 package thread.syncronizedblock;
 
-import android.util.Log;
-
 import androidx.annotation.NonNull;
 
 /**

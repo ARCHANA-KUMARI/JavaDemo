@@ -1,13 +1,10 @@
 package thread;
 
-import android.util.Log;
-
 /**
  * @Author: Archana Kumari
  * @Date: 02-02-2023
  */
 public class SynchronizedCounter {
-    private final static String TAG = "Archana";
     private int c = 0;
 
     public synchronized void increment() {
