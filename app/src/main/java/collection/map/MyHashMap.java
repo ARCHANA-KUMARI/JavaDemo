@@ -10,7 +10,7 @@ import java.util.List;
  * @Date: 10-04-2023
  */
 public class MyHashMap<K, V> {
-    private class Node {
+      private class Node {
         K key;
         V value;
 
@@ -125,7 +125,7 @@ public class MyHashMap<K, V> {
         LinkedList<Node> nodeList = mBucketList[bucketListIndex];
         if (nodeList != null && nodeList.size() > 0) {
             for (int i = 0; i < nodeList.size(); i++) {
-                if (nodeList.get(i) == key) {
+                if (nodeList.get(i) .key== key) {
                     return i;
                 }
             }

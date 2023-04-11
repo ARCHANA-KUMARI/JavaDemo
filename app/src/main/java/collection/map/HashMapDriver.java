@@ -22,6 +22,7 @@ public class HashMapDriver {
             System.out.print(keyList.get(i) + " ");
         }
         System.out.println();
+        System.out.println("size() method test:" + hashMap.size());
         System.out.println("Contains method test:" + hashMap.contains("Bihar"));
         System.out.println("!Contains method test:" + hashMap.contains("India"));
         System.out.println("!IsEmpty() method test:" + hashMap.isEmpty());
