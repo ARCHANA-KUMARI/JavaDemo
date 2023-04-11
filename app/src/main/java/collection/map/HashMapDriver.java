@@ -16,6 +16,16 @@ public class HashMapDriver {
         hashMap.put("Karnataka", 500);
         hashMap.put("UP", 55000);
         hashMap.put("Maharastra", 3000);
+        hashMap.put("Asam", 5000);
+        hashMap.put("Pondichery", 15000);
+        hashMap.put("Goa", 500);
+        hashMap.put("Delhi", 55000);
+        hashMap.put("Patna", 3000);
+        hashMap.put("Udupi", 5000);
+        hashMap.put("Allapy", 15000);
+        hashMap.put("Lucknow", 500);
+        hashMap.put("Mumbai", 55000);
+        hashMap.put("Maharastra", 3000);
 
         List<String> keyList = hashMap.getKeySet();
         for (int i = 0; i < keyList.size(); i++) {
