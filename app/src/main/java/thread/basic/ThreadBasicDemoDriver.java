@@ -34,6 +34,17 @@ Exception in thread "main" java.lang.IllegalThreadStateException
 	at java.base/java.lang.Thread.start(Unknown Source)
 	at thread.basic.ThreadBasicDemoDriver.main(ThreadBasicDemoDriver.java:28)*/
 
+    //Multiple invocation of run()
+        threadByExtend.run();
+        threadByExtend.run();
+
+    /*
+    * o/p
+    * ThreadByExtend constructor call:Thread[#1,main,5,main], Thread`S Name:Thread-0
+ThreThreadByExtend run:Thread[#1,main,5,main], Thread`S Name:Thread-0
+ThreThreadByExtend run:Thread[#1,main,5,main], Thread`S Name:Thread-0*/
+
+
 
     }
 }
