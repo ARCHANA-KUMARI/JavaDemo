@@ -35,8 +35,8 @@ Exception in thread "main" java.lang.IllegalThreadStateException
 	at thread.basic.ThreadBasicDemoDriver.main(ThreadBasicDemoDriver.java:28)*/
 
     //Multiple invocation of run()
-        threadByExtend.run();
-        threadByExtend.run();
+     /*   threadByExtend.run();
+        threadByExtend.run();*/
 
     /*
     * o/p
