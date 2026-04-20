@@ -15,12 +15,13 @@ public class ThreadLocalDemo {
         System.out.println("get threadLocal variable value after threadLocal.remove()= " + threadLocal.get());
 
         ThreadLocalDemoForId threadLocalDemoForId1 = new ThreadLocalDemoForId("Thread 1.");
-        threadLocalDemoForId1.start();
         ThreadLocalDemoForId threadLocalDemoForId2 = new ThreadLocalDemoForId("Thread 2.");
-        threadLocalDemoForId2.start();
         ThreadLocalDemoForId threadLocalDemoForId3 = new ThreadLocalDemoForId("Thread 3.");
-        threadLocalDemoForId3.start();
         ThreadLocalDemoForId threadLocalDemoForId4 = new ThreadLocalDemoForId("Thread 4.");
+
+        threadLocalDemoForId1.start();
+        threadLocalDemoForId2.start();
+        threadLocalDemoForId3.start();
         threadLocalDemoForId4.start();
 
     }
