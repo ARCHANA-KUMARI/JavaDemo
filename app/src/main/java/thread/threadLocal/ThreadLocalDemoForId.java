@@ -6,16 +6,16 @@
 
 package thread.threadLocal;
 
-import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 
 public class ThreadLocalDemoForId extends Thread {
     public ThreadLocalDemoForId(String threadName) {
         super(threadName);
     }
 
-    static int userDefinedThreadId = 0;
-    private static ThreadLocal threadLocal = new ThreadLocal() {
-        @Nullable
+     static int userDefinedThreadId = 0;
+    static  private  ThreadLocal threadLocal = new ThreadLocal() {
+        @NonNull
         @Override
         protected Object initialValue() {
             return ++userDefinedThreadId;
@@ -24,6 +24,6 @@ public class ThreadLocalDemoForId extends Thread {
 
     @Override
     public void run() {
-        System.out.println("Thhread Name" + Thread.currentThread().getName() + " and userDefinedThreadId" + threadLocal.get());
+        System.out.println("Thread Name" + Thread.currentThread().getName() + " and userDefinedThreadId" + threadLocal.get() + " , And threadLocal object : " + threadLocal);
     }
 }
