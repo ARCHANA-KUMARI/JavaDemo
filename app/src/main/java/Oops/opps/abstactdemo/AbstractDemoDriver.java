@@ -11,8 +11,13 @@ public class AbstractDemoDriver {
        /* Parent parentRef = new Child();
         parentRef.about();*/
 
-        ParentWithoutAbstactMethod parentWithoutAbstactMethod = new ChildWIthoutAbstactMethod();
-        parentWithoutAbstactMethod.concreteMethod();
+       /* ParentWithoutAbstactMethod parentWithoutAbstactMethod = new ChildWIthoutAbstactMethod();
+        parentWithoutAbstactMethod.concreteMethod();*/
+
+        AbstractDemoWithInterface abstractDemoWithInterface = new ChildAbstactDemoWithInterface();
+        abstractDemoWithInterface.methodA1FromInterface();
+        abstractDemoWithInterface.methodA2FromInterface();
+        abstractDemoWithInterface.methodFromAbstactClass();
 
 
     }
