@@ -28,4 +28,10 @@ public class Notifier {
         System.out.println("Push Notification [Priority " + priority + "]: " + message);
     }
 
+    //Changing the Order of Parameters, it works
+    public void sendNotification(int priority, String message) {
+        System.out.println("Push Notification [Priority " + priority + "]: " + message);
+    }
+
+
 }
