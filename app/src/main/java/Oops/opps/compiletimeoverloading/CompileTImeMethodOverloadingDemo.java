@@ -13,6 +13,7 @@ public class CompileTImeMethodOverloadingDemo {
         notifier.sendNotification("Hello Archana!"); // Text
         notifier.sendNotification("Job Update", "Your interview is scheduled for April 27th."); // Email
         notifier.sendNotification("Battery Low!", 1); // Push
+        notifier.sendNotification(1,"Battery Low!"); // Push changed order of params if data type is different it`s working fine.
     }
 
 }
