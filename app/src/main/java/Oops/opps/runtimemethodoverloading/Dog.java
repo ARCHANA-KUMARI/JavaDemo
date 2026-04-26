@@ -10,7 +10,8 @@ package Oops.opps.runtimemethodoverloading;
 public class Dog extends Animal {
     @Override
     void move() {
-        System.out.println("Dog is running.");
+        super.move(); // Calling parent`s method using super keyword.
+        System.out.println("Dog is moving.");
     }
 
     void bark() {
