@@ -9,10 +9,11 @@
 package Oops.opps.compiletimeoverloading;
 
 public class CompileTImeMethodOverloadingByDiffReturnType {
-    public void sendNotification(String message) {
+    // Commented for compilation purpose, uncomment it to see it`s behaviour.
+  /*  public void sendNotification(String message) {
         System.out.println("Text Notification: " + message);
     }
-
+*/
     public String sendNotification(String message) {
         System.out.println("Text Notification: " + message);
         return message;
